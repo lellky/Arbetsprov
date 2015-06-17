@@ -26,7 +26,6 @@
 
 <script>
     var input = document.getElementById('searchTextField');
-    var autocomplete;
 
     function initialize(element) {
         var input = element;
@@ -50,8 +49,6 @@
         var place = autocomplete.getPlace();
         var val = place.address_components[0].short_name;
 
-        val = val + ' ' + getDateTime();
-
         addBox(val);
     }
 
@@ -68,12 +65,12 @@
     }
 
     function addBox(string) {
-        console.log(string);
-
         var $resultContainer = $('#result');
         var $newElement = $('<article>');
+        var date = getDateTime();
 
         $newElement.append('<h1>' + string + '</h1>');
+        $newElement.append('<p>' + date + '</p>')
 
         $resultContainer.append($newElement);
     }
