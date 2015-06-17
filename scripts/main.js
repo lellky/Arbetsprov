@@ -20,7 +20,7 @@
 (function () {
   'use strict';
 
-  console.log('%cHej Harald! Hoppas att du tycker det ser bra ut!', 'color: green; font-size: 12px');
+  console.log('%cHej Harald! Happy inspecting!', 'color: green; font-size: 12px');
 
   var input = document.getElementById('searchTextField');
 
@@ -63,11 +63,13 @@
 
   function addBox(string) {
     var $resultContainer = $('#result');
-    var $newElement = $('<article>');
+    var $newElement = $('<article class="media">');
     var date = getDateTime();
 
-    $newElement.append('<h1>' + string + '</h1>');
-    $newElement.append('<p>' + date + '</p>')
+    $resultContainer.find('.byebye').remove();
+
+    $newElement.append('<h2 class="h4"><i class="icon-heart"></i> <address>' + string + ' </address><small><date>' + date + '</date></small></h2>');
+
 
     $resultContainer.append($newElement);
   }
