@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Jonas Fors Lellky -- Frontend developer -- @lellky
+
+# THANKS
+
+    The Internet
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5, JavaScript
+    Static Site Starter Kit, Bootstrap, jQuery, Google Maps Api, Magic

@@ -1,0 +1,40 @@
+doctype html
+html(class='no-js', lang='sv')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+
+    block title
+      title Arbetsprov på HM för Jonas Fors Lellky - Claremont AB
+
+    meta(name='description', content='Detta är ett arbetsprov av Jonas Fors Lellky för att visa folket på HM att jag duger som frontendutvecklare för hm.com')
+    meta(name='viewport', content='device-width, minimum-scale=1, maximum-scale=1, initial-scale=1')
+
+    meta(name='theme-color', content='#{hmColor}')
+
+    <!-- Favicon code goes here -->
+
+    link(rel='stylesheet', href='css/style.css')
+
+  body
+    <!--[if lt IE 8]>
+    p.browserupgrade.
+      Du använder en <strong>asgammal</strong> browser.
+      <a href="http://browsehappy.com/">Uppgradera din browser</a> för att få den fulla upplevelsen av internet.
+    <![endif]-->
+
+    block body
+
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/#{pkgs.jquery}/jquery.min.js')
+    script.
+      window.jQuery || document.write('<script src="vendor/#{pkgs.jquery}/jquery.min.js"><\/script>')
+    script(src='js/bundle.js')
+
+    // Google Analytics: change UA-XXXXX-X to be your site's ID.
+    script.
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','#{googleAnalyticsID}','auto');ga('send','pageview');
