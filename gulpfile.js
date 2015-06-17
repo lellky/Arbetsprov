@@ -30,6 +30,7 @@ var argv = require('minimist')(process.argv.slice(2));
 
 // Custom
 var HM_COLOR = '#CD2026';                   // Hopefully this is the right red color
+var HM_COLOR_BG = '#ffffff';
 
 // Settings
 var RELEASE = !!argv.release;             // Minimize and optimize during a build?
@@ -107,7 +108,8 @@ gulp.task('pages', function () {
       locals: {
         pkgs: pkgs,
         googleAnalyticsID: GOOGLE_ANALYTICS_ID,
-        hmColor: HM_COLOR
+        hmColor: HM_COLOR,
+        hmColorBg: HM_COLOR_BG
       }
     })))
     .pipe($.if(RELEASE, $.htmlmin({
