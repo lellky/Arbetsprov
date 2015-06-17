@@ -29,7 +29,7 @@ var runSequence = require('run-sequence');
 var argv = require('minimist')(process.argv.slice(2));
 
 // Custom
-var hmColor = '#CD2026';                   // Hopefully this is the right red color
+var HM_COLOR = '#CD2026';                   // Hopefully this is the right red color
 
 // Settings
 var RELEASE = !!argv.release;             // Minimize and optimize during a build?
@@ -55,6 +55,12 @@ gulp.task('default', ['serve']);
 
 // Clean up
 gulp.task('clean', del.bind(null, ['build/*', '!build/.git'], {dot: true}));
+
+var cache = require('gulp-cache');
+// Clear cache
+gulp.task('clearcache', function (done) {
+  return cache.clearAll(done);
+});
 
 // 3rd party libraries
 gulp.task('vendor', function () {
@@ -100,7 +106,8 @@ gulp.task('pages', function () {
       pretty: !RELEASE,
       locals: {
         pkgs: pkgs,
-        googleAnalyticsID: GOOGLE_ANALYTICS_ID
+        googleAnalyticsID: GOOGLE_ANALYTICS_ID,
+        hmColor: HM_COLOR
       }
     })))
     .pipe($.if(RELEASE, $.htmlmin({
