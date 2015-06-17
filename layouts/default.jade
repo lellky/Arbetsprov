@@ -8,7 +8,7 @@ html(class='no-js', lang='sv')
       title Arbetsprov på HM för Jonas Fors Lellky - Claremont AB
 
     meta(name='description', content='Detta är ett arbetsprov av Jonas Fors Lellky för att visa folket på HM att jag duger som frontendutvecklare för hm.com')
-    meta(name='viewport', content='device-width, minimum-scale=1, maximum-scale=1, initial-scale=1')
+    meta(name='viewport', content='width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1')
 
     meta(name='theme-color', content='#{hmColor}')
 
@@ -19,15 +19,29 @@ html(class='no-js', lang='sv')
     link(rel='stylesheet', href='css/style.css')
 
   body
-    <!--[if lt IE 8]>
-    p.browserupgrade.
-      Du använder en <strong>asgammal</strong> browser.
-      <a href="http://browsehappy.com/">Uppgradera din browser</a> för att få den fulla upplevelsen av internet.
-    <![endif]-->
 
-    block body
+    .container
+      header
+        <!--[if lt IE 8]>
+        p.browserupgrade.
+          Du använder en <strong>asgammal</strong> browser.
+          <a href="http://browsehappy.com/">Uppgradera din browser</a> för att få den fulla upplevelsen av internet.
+        <![endif]-->
+
+        h1.
+          sticky footer
+
+        block body
+
+    footer.footer
+      .container
+        p.
+          Place sticky footer content here.
+
+
 
     script(src='//ajax.googleapis.com/ajax/libs/jquery/#{pkgs.jquery}/jquery.min.js')
+    script(src='//maps.googleapis.com/maps/api/js?v=3.exp&libraries=places')
     script.
       window.jQuery || document.write('<script src="vendor/#{pkgs.jquery}/jquery.min.js"><\/script>')
     script(src='js/bundle.js')

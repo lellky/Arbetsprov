@@ -20,6 +20,57 @@
 (function () {
   'use strict';
 
-  console.log('Welcome to Static Website Starter Kit!');
-  console.log('https://github.com/kriasoft/static-site-starter');
+  console.log('%cHej Harald! Hoppas att du tycker det ser bra ut!', 'color: green; font-size: 12px');
+
+  var input = document.getElementById('searchTextField');
+
+  function initialize(element) {
+    var input = element;
+    var options = {
+      types: ['geocode'],
+      componentRestrictions: {country: 'se'}
+    };
+
+    var autocomplete = new google.maps.places.Autocomplete(input, options);
+
+    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+      prepareBox(autocomplete);
+      input.value = '';
+    });
+  }
+
+  function prepareBox(autocomplete) {
+    if(place === 'undefined')
+      return;
+
+    var place = autocomplete.getPlace();
+    var val = place.address_components[0].short_name;
+
+    addBox(val);
+  }
+
+  function getDateTime() {
+    /* Stolen from the internet */
+    var d = new Date();
+    return (
+    d.getFullYear() + '-' +
+    ('00' + d.getDate()).slice(-2) + '-' +
+    ('00' + (d.getMonth() + 1)).slice(-2) + ' ' +
+    ('00' + d.getHours()).slice(-2) + ':' +
+    ('00' + d.getMinutes()).slice(-2)
+    );
+  }
+
+  function addBox(string) {
+    var $resultContainer = $('#result');
+    var $newElement = $('<article>');
+    var date = getDateTime();
+
+    $newElement.append('<h1>' + string + '</h1>');
+    $newElement.append('<p>' + date + '</p>')
+
+    $resultContainer.append($newElement);
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize(input));
 })();
