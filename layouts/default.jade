@@ -1,5 +1,5 @@
 doctype html
-html(class='no-js', lang='sv')
+html(class='no-js', lang='sv', itemscope='', itemtype='http://schema.org/WebSite')
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
@@ -32,27 +32,30 @@ html(class='no-js', lang='sv')
     meta(name='msapplication-TileColor', content='#ffffff')
     meta(name='msapplication-TileImage', content='/mstile-144x144.png')
 
+    meta(itemprop='url', content='http://www.example.com/')
+
     link(rel='stylesheet', href='css/style.css')
 
   body
 
     .container
-      header
+      block header
         <!--[if lt IE 8]>
         p.browserupgrade.
           Du använder en <strong>asgammal</strong> browser.
           <a href="http://browsehappy.com/">Uppgradera din browser</a> för att få den fulla upplevelsen av internet.
         <![endif]-->
 
-        h1.
-          sticky footer
+      main
 
         block body
 
     footer.footer
       .container
-        p.
-          Place sticky footer content here.
+        p.text-center
+          a(href='//twitter.com/lellky', target='_blank') @lellky
+          &nbsp; &#124; &nbsp;
+          a(href='tel://+46704994915') 070-499 49 15
 
 
 
