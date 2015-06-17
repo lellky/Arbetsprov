@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+<h1>Hello World!</h1>
+
+<img src="img/powered-by-google-on-white.png" alt="Google logo"/>
+
+<input id="searchTextField" type="text" size="50" placeholder="Sök svenska städer">
+
+<section id="result"></section>
+
+
+
+
+
+
+<!-- Load script without given protocol so that protocol doesnt matter -->
+<script src="//maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<script>
+    var input = document.getElementById('searchTextField');
+    var autocomplete;
+
+    function initialize(element) {
+        var input = element;
+        var options = {
+            types: ['geocode'],
+            componentRestrictions: {country: 'se'}
+        };
+
+        var autocomplete = new google.maps.places.Autocomplete(input, options);
+
+        google.maps.event.addListener(autocomplete, 'place_changed', function() {
+            prepareBox(autocomplete);
+            input.value = '';
+        });
+    }
+
+    function prepareBox(autocomplete) {
+        if(place === 'undefined')
+            return;
+
+        var place = autocomplete.getPlace();
+        var val = place.address_components[0].short_name;
+
+        val = val + ' ' + getDateTime();
+
+        addBox(val);
+    }
+
+    function getDateTime() {
+        /* Stolen from the internet */
+        var d = new Date();
+        return (
+                d.getFullYear() + '-' +
+                ('00' + d.getDate()).slice(-2) + '-' +
+                ('00' + (d.getMonth() + 1)).slice(-2) + ' ' +
+                ('00' + d.getHours()).slice(-2) + ':' +
+                ('00' + d.getMinutes()).slice(-2)
+        );
+    }
+
+    function addBox(string) {
+        console.log(string);
+
+        var $resultContainer = $('#result');
+        var $newElement = $('<article>');
+
+        $newElement.append('<h1>' + string + '</h1>');
+
+        $resultContainer.append($newElement);
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize(input));
+
+</script>
+</body>
+</html>
