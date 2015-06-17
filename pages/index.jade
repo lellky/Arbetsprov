@@ -3,17 +3,25 @@ extends ../layouts/default
 block title
   title Arbetsprov på HM för Jonas Fors Lellky - Claremont AB
 
+block header
+  header(role='banner')
+    h1(class='text-center').
+      Dude!
+
 block body
 
-  h1.
-    Hello World!
   img(src='img/powered-by-google-on-white.png', alt='Google logo')
 
-  input(
-    type='text'
-    id='searchTextField'
-    size='40'
-    placeholder='Sök svenska städer'
-  )
+  div
+    label(for='searchTextField').
+      Sök svenska städer
+    input(
+      type='text'
+      id='searchTextField'
+      placeholder='Sök svenska städer'
+      class='form-control'
+      name='query'
+    )
 
   section#result
+    h2.h6.byebye Inget resultat ännu...
