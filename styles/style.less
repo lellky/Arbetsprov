@@ -1,3 +1,5 @@
+/* Sticky footer css from getbootstrap.com */
+
 html {
   position: relative;
   min-height: 100%;
@@ -7,9 +9,26 @@ body {
   margin-bottom: 30px;
 }
 
+/* Set some widths, margin and padding */
+
 .container {
   max-width: 480px;
 }
+
+main {
+  padding-bottom: 20px;
+}
+
+#result {
+  margin-top: 20px;
+}
+
+iframe {
+  margin: 20px auto;
+  display: block;
+}
+
+/* Give the footer some styling */
 
 footer {
   position: absolute;
@@ -25,9 +44,7 @@ footer {
   }
 }
 
-#result {
-  margin-top: 20px;
-}
+/* Give the result some animation and colors */
 
 .media {
   border: 1px solid lighten(@hm-color1, 30%);
@@ -53,9 +70,4 @@ footer {
   height: 20px;
   display: inline-block;
   background-size: cover;
-}
-
-iframe {
-  margin: 20px auto;
-  display: block;
 }
