@@ -75,4 +75,25 @@
   }
 
   google.maps.event.addDomListener(window, 'load', initialize(input));
+
+  $(document).ready(function(){
+    input.focus();
+
+    // What is this you may ask...
+    cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
+
+      var i = document.createElement('iframe');
+      i.setAttribute('src', '//embed.spotify.com/?uri=spotify:track:7ruOxrjDX8TOtnBVh0i43b');
+      i.setAttribute('frameborder', '0');
+      i.setAttribute('allowtransparency', true)
+      i.style.width = 300+'px';
+      i.style.height = 80+'px';
+
+      var el = document.getElementById('result');
+      el.parentNode.appendChild(i, el);
+
+      alert("1337");
+    });
+  });
+
 })();

@@ -34,6 +34,12 @@ html(class='no-js', lang='sv', itemscope='', itemtype='http://schema.org/WebSite
 
     meta(itemprop='url', content='http://www.example.com/')
 
+    meta(property='og:type', content='website')
+    meta(property='og:title', content='Arbetsprov på HM för Jonas Fors Lellky - Claremont AB')
+    meta(property='og:image', content='/apple-touch-icon-180x180.png')
+    meta(property='og:description', content='Detta är ett arbetsprov av Jonas Fors Lellky för att visa folket på HM att jag duger som frontendutvecklare för hm.com')
+
+
     link(rel='stylesheet', href='css/style.css')
 
   body
@@ -50,7 +56,7 @@ html(class='no-js', lang='sv', itemscope='', itemtype='http://schema.org/WebSite
 
         block body
 
-    footer.footer
+    footer(role='footer')
       .container
         p.text-center
           a(href='//twitter.com/lellky', target='_blank') @lellky
@@ -61,6 +67,7 @@ html(class='no-js', lang='sv', itemscope='', itemtype='http://schema.org/WebSite
 
     script(src='//ajax.googleapis.com/ajax/libs/jquery/#{pkgs.jquery}/jquery.min.js')
     script(src='//maps.googleapis.com/maps/api/js?v=3.exp&libraries=places')
+    script(src='//cdn.rawgit.com/namuol/cheet.js/master/cheet.min.js')
     script.
       window.jQuery || document.write('<script src="vendor/#{pkgs.jquery}/jquery.min.js"><\/script>')
     script(src='js/bundle.js')
