@@ -70,8 +70,13 @@
 
     $newElement.append('<h2 class="h4"><i class="icon-heart"></i> <address>' + string + ' </address><small><date>' + date + '</date></small></h2>');
 
-
     $resultContainer.append($newElement);
+
+    ga('send', {
+      'hitType': 'event',          // Required.
+      'eventCategory': 'search',   // Required.
+      'eventAction': 'itemadded'      // Required.
+    });
   }
 
   google.maps.event.addDomListener(window, 'load', initialize(input));
@@ -91,6 +96,12 @@
 
       var el = document.getElementById('result');
       el.parentNode.appendChild(i, el);
+
+      ga('send', {
+        'hitType': 'event',          // Required.
+        'eventCategory': 'cheet',   // Required.
+        'eventAction': '1337'      // Required.
+      });
 
       alert("1337");
     });
