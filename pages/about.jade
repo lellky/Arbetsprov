@@ -1,14 +1,42 @@
 extends ../layouts/default
 
 block title
-  title About Us
+  title Om arbetsprovet
 
 block body
-  h2 About Us
+  h1 Om detta arbetsprov
+  p.lead Här kommer lite förklaringar till varför saker är som de är
+
+  h2 Dokumentation
+  ul
+    li Byggmiljön är ett startpaket som jag använt tidigare https://github.com/kriasoft/static-site-starter, går snabbt att komma igång och man behöver inte skriva all gulp själv
+    li Favicons är genererade med http://realfavicongenerator.net/ och ska vara implementerade enligt de facto standard
+    li Googles logo visas eftersom det ingår i deras policy för gratis-api
+    li För att bygga behövs node och gulp, kör sedan node install, och gulp för att serva i en browser
+
+  h2 Kända buggar
+  ul
+    li När man alt-tabbar så är textfältet inte längre tomt. Denna bugg uppstår för att fältet tappar fokus. Säkert jag som gjort nåt knas.
+    li Mina javascript kollar inte om vissa element finns eller inte, därför får man js-fel på denna sida
+
+  h2 Vad skulle jag vilja utveckla
+  ul
+    li React eller liknande så jag kan använda templates för javascript-utskrifter
+    li Jag la in schema men fastnade med en massa andra grejer så det blev bara en website utan data
+    li Jag använde date utan att lägga in mer data om datum
+    li Jag använder en svg som ikon, men den skulle vara base64-encodad i css för att spara request (med flera ikoner skulle jag göra en font av det, något som kanske kan starta en intressant diskussion?)
+    li 404-sidan följde med static site och den skulle jag utveckla med förslag på content och inte låta vara ful.
+    li Jag använder inte alls mycket av TB så jag skulle kunnat skrivit css själv, men med en beprövad reset.
+    li Jag satte inte role=“contentinfo” på footer av följande skäl "A large perceivable region that contains information about the parent document. Examples of information included in this region of the page are copyrights and links to privacy statements."
+    li Angående WAI-ARIA så verkar det hänt en del sedan jag jobbade med det, så där skulle jag behöva läsa på för att kunna lägga in smarta roller
+    li Jag har inte testat og-taggarna
+    li Jag gör ingen koll att analytics har laddat när jag skickar mina event
+    li Jag har inte optimerat sidan för att vara snabb: det är många js-filer, mycket oanvänd css, och bilder som kan vara base64-enkodade
+    li Jag la inte in nån fancy font (Microgramma finns inte som webbfont och jag ville inte lägga tid på att göra en) för jag tyckte det bara skulle ta tid
+
+  h2 Slutligen
   p.
-    <strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-    been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-    software like Aldus PageMaker including versions of Lorem Ipsum.
+    Jag satte igång på onsdagskvällen för att jag insåg att jag ville ha det här ur världen innan midsommar.
+    Totalt har det tagit ca 8-10 timmar, och då har den mesta tiden gått till små-buggar och konstigheter. Skälva
+    "söket" var klart på ca 2 timmar. Det finns mycket man kan göra bättre, men jag tycker att det här arbetsprovet
+    visar att jag kan lite av varje utan att ha fördjupat mig i något specifikt (pga tidsbrist).
