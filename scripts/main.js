@@ -20,7 +20,7 @@
 (function () {
   'use strict';
 
-  console.log('%cHej Harald! Happy inspecting!', 'color: green; font-size: 12px');
+  console.log('%cHej Harald och Jesper! Happy inspecting!', 'color: green; font-size: 12px');
 
   var input = document.getElementById('searchTextField');
 
@@ -82,7 +82,6 @@
   google.maps.event.addDomListener(window, 'load', initialize(input));
 
   $(document).ready(function(){
-    input.focus();
 
     // What is this you may ask...
     cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
@@ -94,7 +93,7 @@
       i.style.width = 300+'px';
       i.style.height = 80+'px';
 
-      var el = document.getElementById('result');
+      var el = document.getElementById('main');
       el.parentNode.appendChild(i, el);
 
       ga('send', {
