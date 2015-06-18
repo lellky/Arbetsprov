@@ -15,7 +15,7 @@ Vad vi kollar på:
 * Hur är CSS/JS skrivet?
 * Hur är det paketerat
 * Allmän sanity check på strukturen.
-* Finns en readme och räcker den för köra igång din lösning?
+* Finns en readme och räcker den för köra igång din lösning? /Ja, den ligger under /about.html
 
 Lös uppgiften så långt du anser är befogat.
 
